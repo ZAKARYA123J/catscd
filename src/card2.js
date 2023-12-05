@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from '@chakra-ui/react';
+
 
 function Card2(props) {
   const img1 = "1130a.jpeg";

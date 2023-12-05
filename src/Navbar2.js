@@ -30,7 +30,7 @@ const Navbar2 = () => {
         <div className="container mx-auto px-8 py-4 flex items-center">
           {/* Logo */}
           <div className="mr-auto md:w-48 flex-shrink-0">
-            <img className="h-8 md:h-12" src={require('./Logo.png')} alt="logo" />
+            <img width='55px' src={require('./logo2.png')} alt="logo" />
           </div>
 
           {/* Navigation for larger screens */}

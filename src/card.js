@@ -5,12 +5,12 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Assuming you have FontAwesome icons
 
-import image1 from './slide/1147a.jpg';
-import image2 from './slide/1148a.jpg';
-import image3 from './slide/1149a.jpg';
-import image4 from './slide/1150a.jpg';
-import image5 from './slide/1151a.jpg';
-import image6 from './slide/1152a.jpg';
+import image1 from './slide/1147b.jpg';
+import image2 from './slide/1148b.jpg';
+import image3 from './slide/1149b.jpg';
+import image4 from './slide/1150b.jpg';
+import image5 from './slide/1151b.jpg';
+import image6 from './slide/1152b.jpg';
 
 function Card() {
   const sliderSettings = {

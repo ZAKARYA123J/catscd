@@ -1,6 +1,7 @@
 
 import React from 'react';
-import './navbar1.css'; // Import the CSS file for styling
+import './navbar1.css'; 
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -8,8 +9,8 @@ const Navbar = () => {
       <div className="menu-icon">&#9776;</div>
       <div className="logo">logo</div>
       <div className="menu">
-        <a href="#">Home</a>
-        <a href="#">Contact &#9742;</a> 
+        <Link to={'/'}>Home</Link>
+        <Link to={'/Contact'}>Contact &#9742;</Link> 
         
       </div>
     </nav>

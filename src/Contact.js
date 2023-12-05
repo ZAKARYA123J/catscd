@@ -1,6 +1,28 @@
- export default function Contact(){
+import { useState,useEffect } from "react"
+import axios from 'axios'
+export default function Contact(){
+    const [name,setName]=useState('')
+    const [email,setEmail]=useState('')
+    const [message,setMessage]= useState('')
+    const [password,setPassword]=useState('')
+    const [apiData, setApiData] = useState(null);
 
-return(<section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+  
+    useEffect(() => { const fetchData = async () => {
+         try { const response = await axios.get("http://localhost:8000/"); 
+         const data = response.data; setApiData(data); }
+          catch (error) { console.error("Error fetching data from the API:", error); } };
+
+    fetchData();
+    }, []);
+    
+    const submit = async (e) => { e.preventDefault(); try { await axios.post("http://localhost:8000/sign", { name: name, email: email,password:password, message: message, },);
+    alert('succes')
+       setName(""); setEmail(""); setMessage("");} catch (error) { console.error("Error submitting the form:", error); } };
+return(
+    <>
+  
+<section className="py-6 dark:bg-gray-800 dark:text-gray-50">
 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
     <div className="py-6 md:py-0 md:px-6">
         <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -27,21 +49,28 @@ return(<section className="py-6 dark:bg-gray-800 dark:text-gray-50">
             </p>
         </div>
     </div>
-    <form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+    <form novalidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+        
         <label className="block">
             <span className="mb-1">Full name</span>
-            <input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
+            <input required type="text" name="name" onChange={(e)=>{setName(e.target.value)}} placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
         </label>
         <label className="block">
             <span className="mb-1">Email address</span>
-            <input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
+            <input required type="email"name="email" onChange={(e)=>{setEmail(e.target.value)}} placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
+        </label>
+        <label className="block">
+            <span className="mb-1">Password</span>
+            <input required type="password"name="password" onChange={(e)=>{setPassword(e.target.value)}}  className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
         </label>
         <label className="block">
             <span className="mb-1">Message</span>
-            <textarea rows="3" className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-gray-800"></textarea>
+            <textarea name="message" rows="3"onChange={(e)=>{setMessage(e.target.value)}} className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-gray-800"></textarea>
         </label>
-        <button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri dark:bg-violet-400 dark:text-gray-900 focus:ri hover:ri">Submit</button>
+        <button type="submit"onClick={submit} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri dark:bg-violet-400 dark:text-gray-900 focus:ri hover:ri">Submit</button>
     </form>
 </div>
-</section>)
+</section>
+</>
+)
 }
