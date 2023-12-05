@@ -12,7 +12,7 @@ const Login = () => {
         e.preventDefault();
     
         try {
-          const result = await axios.post("http://localhost:8000/login", { email, password });setEmail('');setPassword('')
+          const result = await axios.post("https://zakarya.onrender.com/login", { email, password });setEmail('');setPassword('')
           console.log(result);
     
           if (result.data === "Success") {

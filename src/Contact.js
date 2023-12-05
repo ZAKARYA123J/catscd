@@ -9,14 +9,14 @@ export default function Contact(){
 
   
     useEffect(() => { const fetchData = async () => {
-         try { const response = await axios.get("http://localhost:8000/"); 
+         try { const response = await axios.get("https://zakarya.onrender.com/"); 
          const data = response.data; setApiData(data); }
           catch (error) { console.error("Error fetching data from the API:", error); } };
 
     fetchData();
     }, []);
     
-    const submit = async (e) => { e.preventDefault(); try { await axios.post("http://localhost:8000/sign", { name: name, email: email,password:password, message: message, },);
+    const submit = async (e) => { e.preventDefault(); try { await axios.post("https://zakarya.onrender.com/sign", { name: name, email: email,password:password, message: message, },);
     alert('succes')
        setName(""); setEmail(""); setMessage("");} catch (error) { console.error("Error submitting the form:", error); } };
 return(
