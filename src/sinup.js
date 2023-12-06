@@ -7,8 +7,7 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
-  VStack,
-  Center
+  VStack
   
 } from '@chakra-ui/react';
 import axios from 'axios';
