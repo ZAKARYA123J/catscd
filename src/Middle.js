@@ -1,13 +1,13 @@
 import React from 'react';
 import { Flex, Image, Text, Box } from '@chakra-ui/react';
-import img from './cat2.png';
+import img from './cat.jpg';
 import Card from './card';
 
 function Middle() {
   return (
     <Flex  align="center" justify="center" style={{flexWrap:'wrap'}}>
       <Box>
-        <Image  height="400px" style={{ margin: '20px' }} width="300px" src={img} alt="Cat" />
+        <Image  height="400px" style={{ margin: '20px',border:'1px solid black', borderRadius:'2px' }} width="300px" src={img} alt="Cat" />
       </Box>
 
       <Box ml={{ base: '0', md: '20px' }}>
