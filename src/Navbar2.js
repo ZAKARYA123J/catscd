@@ -41,9 +41,7 @@ const Navbar2 = () => {
                   Home
                 </Link>
               </li>
-              <li>
-              <Link  className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0" to={'/sinup'}href="#" >Signup</Link>
-              </li>
+         
               <li className='hidden'>
                 <button onClick={toggleDropdown} className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
                   Tools
@@ -81,6 +79,9 @@ const Navbar2 = () => {
               <li>
                 <Link to={"/Contact"} className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Contact</Link>
               </li>
+              <li>
+              <Link  to={'/sinup'}href="#" className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0" >Signup</Link>
+              </li>
             </ul>
           </div>
 
@@ -107,6 +108,9 @@ const Navbar2 = () => {
                   <li>
                     <Link to={"/Contact"} className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Contact</Link>
                   </li>
+                  <li>
+              <Link  to={'/sinup'}href="#" className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0" >Signup</Link>
+              </li>
                 </ul>
               </div>
             )}
