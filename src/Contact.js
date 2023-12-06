@@ -1,4 +1,14 @@
 import { useState,useEffect } from "react"
+import {
+  Box,
+  Button,
+  ChakraProvider,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  VStack,
+} from '@chakra-ui/react';
 import axios from 'axios'
 export default function Contact(){
     const [name,setName]=useState('')
@@ -16,9 +26,6 @@ export default function Contact(){
     fetchData();
     }, []);
     
-    const submit = async (e) => { e.preventDefault(); try { await axios.post("https://zakarya.onrender.com/sign", { name: name, email: email,password:password, message: message, },);
-    alert('succes')
-       setName(""); setEmail(""); setMessage("");} catch (error) { console.error("Error submitting the form:", error); } };
 return(
     <>
   
@@ -60,14 +67,10 @@ return(
             <input required type="email"name="email" onChange={(e)=>{setEmail(e.target.value)}} placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
         </label>
         <label className="block">
-            <span className="mb-1">Password</span>
-            <input required type="password"name="password" onChange={(e)=>{setPassword(e.target.value)}}  className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
-        </label>
-        <label className="block">
             <span className="mb-1">Message</span>
             <textarea name="message" rows="3"onChange={(e)=>{setMessage(e.target.value)}} className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-gray-800"></textarea>
         </label>
-        <button type="submit"onClick={submit} className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri dark:bg-violet-400 dark:text-gray-900 focus:ri hover:ri">Submit</button>
+        <button type="submit" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri dark:bg-violet-400 dark:text-gray-900 focus:ri hover:ri">Submit</button>
     </form>
 </div>
 </section>

@@ -41,6 +41,9 @@ const Navbar2 = () => {
                   Home
                 </Link>
               </li>
+              <li>
+              <Link  className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0" to={'/sinup'}href="#" >Signup</Link>
+              </li>
               <li className='hidden'>
                 <button onClick={toggleDropdown} className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
                   Tools
@@ -61,6 +64,7 @@ const Navbar2 = () => {
                       <li>
                         <a href="#" className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
                       </li>
+                     
                       <li>
                         <a href="#" className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
                       </li>

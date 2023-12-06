@@ -10,6 +10,7 @@ import Login from './Login';
 import Products from './Products';
 import Middle2 from './Middle2';
 import './Logo.png';
+import Signup from './sinup';
 import Productinfo from './Productinfo';
 function App() {
   const [jsonData, setJsonData] = useState(null);
@@ -54,6 +55,7 @@ function App() {
         <Route path="/" element={<Middle/>} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Login" element={<Login />} />
+        <Route path='/sinup' element={<Signup/>} />
         <Route path="/Products" element={<Products data={jsonData} />} />
       </Routes>
     
