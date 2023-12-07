@@ -1,50 +1,57 @@
 /* Middle.css */
-body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  /* Add the above styles to reset margin and padding */
-.content-container {
-    display: flex;
-    align-items: center;
-  }
- /* Middle.css */
 
-/* Middle.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+}
+
 .middle-container {
-  position: relative; /* Add this line to make it a reference for absolute positioning */
   display: flex;
   justify-content: center;
-  padding: 5px;
+  align-items: center;
   height: 100vh;
 }
 
 .background-container {
-  background: url('./homeimg.webp') center/cover no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  background: url('./krallepet-antalya.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 85vh;
-  border-radius: 10px;
+  height: 80vh;
 }
 
-  
-  .text-container {
-    color: rgb(112, 112, 112); /* Adjust text color based on your image */
-    padding: 20px; /* Adjust padding for text container */
+.text-container {
+  color: white;
+  padding: 20px;
+}
+
+/* Adjust the width for smaller screens */
+.welcomeparagraphe {
+  width: 100%;
+  /* Use word-wrap to prevent overflow */
+  word-wrap: break-word;
+}
+
+/* Additional styling for title and paragraph if needed */
+.text-container h2 {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .middle {
+    display: none;
   }
-  
-  /* Additional styling for title and paragraph if needed */
-  .text-container h2 {
-    margin-bottom: 10px;
+
+  .background-container {
+    background-size: cover;
+    height: 50vh;
   }
-  
+}
     
     

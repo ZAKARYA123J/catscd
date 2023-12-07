@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
-import './navbar2.css';
 
 const Navbar2 = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -18,22 +17,21 @@ const Navbar2 = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Reset dropdown state when component unmounts or when route changes
     return () => {
       setDropdownOpen(false);
     };
-  }, [location.pathname]); // Reset dropdown state when route changes
+  }, [location.pathname]); 
 
   return (
     <>
       <header className="bg-white">
         <div className="container mx-auto px-8 py-4 flex items-center">
-          {/* Logo */}
+          <a href='/'>
           <div className="mr-auto md:w-48 flex-shrink-0">
-            <img width='55px' src={require('./logo2.png')} alt="logo" />
-          </div>
+            <img className="h-8 md:h-12" src='logo2.png' alt="logo" />
+          </div></a>
 
-          {/* Navigation for larger screens */}
+         
           <div className="test hidden md:flex">
             <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
               <li>
@@ -41,7 +39,6 @@ const Navbar2 = () => {
                   Home
                 </Link>
               </li>
-         
               <li className='hidden'>
                 <button onClick={toggleDropdown} className="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
                   Tools
@@ -62,7 +59,6 @@ const Navbar2 = () => {
                       <li>
                         <a href="#" className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
                       </li>
-                     
                       <li>
                         <a href="#" className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
                       </li>

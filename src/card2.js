@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button } from '@chakra-ui/react';
+import {React,useState}from 'react';
+import { Link} from 'react-router-dom';
 
-
-function Card2(props) {
-  const img1 = "1130a.jpeg";
-  const data = props.data;
+function Card2(props) { 
+   const data = props.data;
+   
+  const [data1, setdata1] = useState(data.id);
 
   return (<div >
     <div className="w-48 bg-white shadow rounded m-2" >
       <div
         className="h-40 w-full bg-gray-200 flex flex-col justify-between p-3 bg-cover bg-center"
-        style={{
+        style={{ background:'center no-repeat',
           backgroundSize: 'contain',
           backgroundImage: `url('${data.image}')`
         }}
@@ -36,12 +36,11 @@ function Card2(props) {
         </div>
       </div>
       <div className="p-3 flex flex-col items-center">
-        <p className="text-gray-400 font-light text-sm text-center">{props.type}</p>
-        <p className="text-center text-gray-800 mt-1">{data.id}</p>
-        <div className="inline-flex items-center mt-2">
-          {/* ... rest of the buttons ... */}
-        </div>
-        <button
+        
+        <h2 className="text-center text-gray-800 mt-1" style={{fontWeight:"bold"}}>{data.id}</h2>
+        <p className="text-center text-gray-800 mt-1">{data.price} DH</p>
+        <p className=" hidden text-center text-gray-800 mt-1">{data.sisal}{data.description} DH</p>
+        <Link to={`/Productinfo/${data1}`}
           className="py-2 px-4 bg-gray-500 text-white rounded hover:bg-black active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center"
         >
           
@@ -59,7 +58,7 @@ function Card2(props) {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
             />
           </svg>
-        </button>
+        </Link>
       </div>
     </div>
  </div> );

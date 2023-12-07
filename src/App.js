@@ -1,17 +1,16 @@
 import {React,useEffect,useState} from 'react';
 import './App.css';
-import { useLocation, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Contact from './Contact';
-import Middle from './Middle';
 import Navbar2 from './Navbar2';
 import Wbutton from './whatsapp';
 import Footer from './footer';
 import Login from './Login';
-import Products from './Products';
-import Middle2 from './Middle2';
+import Products from './products';
 import './Logo.png';
-import Signup from './sinup';
 import Productinfo from './Productinfo';
+import SignUp from './SignUp';
+import Middle from './Middle';
 function App() {
   const [jsonData, setJsonData] = useState(null);
   
@@ -40,13 +39,6 @@ function App() {
   }, []);
 
 
-
-
-
-
-
-  const location = useLocation();
-
   return (
 
     <>
@@ -55,10 +47,11 @@ function App() {
         <Route path="/" element={<Middle/>} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Login" element={<Login />} />
-        <Route path='/sinup' element={<Signup/>} />
+        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Products" element={<Products data={jsonData} />} />
+        <Route path="/Productinfo/:data1" element={<Productinfo  />} />
       </Routes>
-    
+      
       {/* 
       <div className="flex flex-wrap">
           {jsonData ? (

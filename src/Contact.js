@@ -1,36 +1,6 @@
-import { useState,useEffect } from "react"
-import { Link } from "react-router-dom";
-import {
-  Box,
-  Button,
-  ChakraProvider,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
-  VStack,
-} from '@chakra-ui/react';
-import axios from 'axios'
-export default function Contact(){
-    const [name,setName]=useState('')
-    const [email,setEmail]=useState('')
-    const [message,setMessage]= useState('')
-    const [password,setPassword]=useState('')
-    const [apiData, setApiData] = useState(null);
+ export default function Contact(){
 
-  
-    useEffect(() => { const fetchData = async () => {
-         try { const response = await axios.get("https://zakarya.onrender.com/"); 
-         const data = response.data; setApiData(data); }
-          catch (error) { console.error("Error fetching data from the API:", error); } };
-
-    fetchData();
-    }, []);
-    
-return(
-    <>
-  
-<section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+return(<section className="py-6 bg-gray-100 text-gray-900">
 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
     <div className="py-6 md:py-0 md:px-6">
         <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -57,27 +27,37 @@ return(
             </p>
         </div>
     </div>
-    <form novalidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
-        
-        <label className="block">
+    <form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+          <label className="block">
             <span className="mb-1">Full name</span>
-            <input required type="text" name="name" onChange={(e)=>{setName(e.target.value)}} placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
-        </label>
-        <label className="block">
+            <input
+              type="text"
+              placeholder="Leroy Jenkins"
+              className="block w-full rounded-md border border-gray-300 shadow-sm focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none bg-gray-100 px-4 py-2"
+            />
+          </label>
+          <label className="block">
             <span className="mb-1">Email address</span>
-            <input required type="email"name="email" onChange={(e)=>{setEmail(e.target.value)}} placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ri focus:ri dark:bg-gray-800" />
-        </label>
-        <label className="block">
+            <input
+              type="email"
+              placeholder="leroy@jenkins.com"
+              className="block w-full rounded-md border border-gray-300 shadow-sm focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none bg-gray-100 px-4 py-2"
+            />
+          </label>
+          <label className="block">
             <span className="mb-1">Message</span>
-            <textarea name="message" rows="3"onChange={(e)=>{setMessage(e.target.value)}} className="block w-full rounded-md focus:ring focus:ri focus:ri dark:bg-gray-800"></textarea>
-        </label>
-        <button type="submit" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ri dark:bg-violet-400 dark:text-gray-900 focus:ri hover:ri">Submit</button>
-       
-
-        
-    </form>
+            <textarea
+              rows="3"
+              className="block w-full rounded-md border border-gray-300 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none bg-gray-100 px-4 py-2"
+            ></textarea>
+          </label>
+          <button
+            type="button"
+            className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:outline-none hover:outline-none focus:ring-blue-500 focus:ring-opacity-50 bg-sky-600 text-gray-50 hover:bg-sky-700"
+          >
+            Submit
+          </button>
+        </form>
 </div>
-</section>
-</>
-)
+</section>)
 }

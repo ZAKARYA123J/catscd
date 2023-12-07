@@ -1,25 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Footer(){
 return(
     <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100">
 	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="lg:w-1/3">
-			<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
+			<a rel="noopener noreferrer" href="/" className="flex justify-center space-x-3 lg:justify-start">
 				<div className="flex items-center justify-center w-12 h-12 rounded-full ">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" className="flex-shrink-0 w-5 h-5 rounded-full dark:text-gray-900">
                     
 					</svg>
-                    <img src={require('./logo2.png')} alt="lgo" />
+                    <img src='logo2.png' alt="lgo" />
 				</div>
 				<span className="self-center text-2xl font-semibold">PetBu</span>
 			</a>
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
-				<h3 className="tracki uppercase dark:text-gray-50">Categories</h3>
+				<h3 className="tracki uppercase dark:text-gray-50 font-bold">Categories</h3>
 				<ul className="space-y-1">
 					<li>
-						<a rel="noopener noreferrer" href="#">Products</a>
+						<Link to="/products"rel="noopener noreferrer" href="#">Products</Link>
 					</li>
 					<li>
 						<a rel="noopener noreferrer" href="#">Price</a>
@@ -30,7 +31,7 @@ return(
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<h3 className="tracki uppercase dark:text-gray-50">Company</h3>
+				<h3 className="tracki uppercase dark:text-gray-50 font-bold">Company</h3>
 				<ul className="space-y-1">
 					<li>
 						<a rel="noopener noreferrer" href="#">Privacy</a>
@@ -41,7 +42,7 @@ return(
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<h3 className="uppercase dark:text-gray-50">Developers</h3>
+				<h3 className="uppercase dark:text-gray-50 font-bold">Developers</h3>
 				<ul className="space-y-1">
 					<li>
 						<a rel="noopener noreferrer" href="#">Zakaria</a>
@@ -55,7 +56,7 @@ return(
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<div className="uppercase dark:text-gray-50">Social media</div>
+				<div className="uppercase dark:text-gray-50 font-bold">Social media</div>
 				<div className="flex justify-start space-x-3">
 					<a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-5 h-5 fill-current">

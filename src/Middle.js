@@ -1,28 +1,42 @@
 import React from 'react';
-import { Flex, Image, Text, Box } from '@chakra-ui/react';
-import img from './cat.jpg';
-import Card from './card';
+import { Flex,ChakraProvider, Image, Text, Box,Button } from '@chakra-ui/react';
+import img from './catl.jpeg';
+import { Link } from 'react-router-dom';
 
 function Middle() {
   return (
-    <Flex  align="center" justify="center" style={{flexWrap:'wrap'}}>
-      <Box>
-        <Image  height="400px" style={{ margin: '20px',border:'1px solid black', borderRadius:'2px' }} width="300px" src={img} alt="Cat" />
+<>
+<ChakraProvider>
+      <Box
+        bgImage={`url(${img})`}
+        bgSize="cover"
+        bgPosition="center"
+        h="100vh"
+        d="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <div style={{ paddingTop: '30px', paddingLeft: '30px' }}>
+          <Text mt={2} color="white" textShadow="2px 2px 4px rgba(0, 0, 0, 0.8)" fontWeight="bold" fontSize="lg">
+            Petbu
+          </Text>
+          <Text maxW="300px" color="white" textShadow="2px 2px 4px rgba(0, 0, 0, 0.8)">
+            Produces quality with the needs of cats in mind. Petbu posts and cat trees provide
+            comfort and safety for your pet. We use a strong frame, thick winding ropes, durable
+            material, first-class.
+          </Text>
+          <br/>
+          <Button colorScheme="gray" size="xs">
+        <Link to="/Products" style={{ color: 'inherit', textDecoration: 'none' }}>
+          PRODUCTS >
+        </Link>
+      </Button>
+        </div>
       </Box>
+    </ChakraProvider>
 
-      <Box ml={{ base: '0', md: '20px' }}>
-        <Text mt={2} fontWeight="bold" fontSize="lg">
-          Petbu
-        </Text>
-        <Text maxW="250px">
-          Produces quality with the needs of cats in mind. Petbu posts and cat trees provide
-          comfort and safety for your pet. We use a strong frame, thick winding ropes, durable
-          material, first-class.
-        </Text>
-      </Box>
-
-      <Card />
-    </Flex>
+   
+      </>
   );
 }
 
